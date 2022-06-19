@@ -237,13 +237,14 @@ function love.update(dt)
         player1.dy = 0
     end
 
-    -- AI
+    -- AI (123Rocco123 Implamentation)
        -- The way that the Aritificial intelligence works is that it tries to match the y-axis of the ball.
-       -- Furthermore, it make sure that the very top of the 
+       -- Furthermore, it make sure that the very top of the paddle isn't the part that is going to hit the ball.
+          -- Instead it makes it so that the center of the paddle is what the AI should hit the ball with.
     if not(ball.y == player2.y + 10) then
-      if (ball.y > player2.y) then
+      if (ball.y > (player2.y + 10)) then
         player2.y =  math.min(VIRTUAL_HEIGHT - player2.height, (player2.y) + (200 * dt))
-      elseif (ball.y < player2.y) then
+      elseif (ball.y < (player2.y + 10)) then
         player2.y = (player2.y) - (200 * dt)
       end
     end
@@ -254,7 +255,9 @@ function love.update(dt)
         ball:update(dt)
     end
 
+    -- Removed the
     player1:update(dt)
+    player2:update(dt)
 end
 
 --[[
@@ -318,6 +321,12 @@ function love.draw()
         love.graphics.printf('Player ' .. tostring(servingPlayer) .. "'s serve!",
             0, 10, VIRTUAL_WIDTH, 'center')
         love.graphics.printf('Press Enter to serve!', 0, 20, VIRTUAL_WIDTH, 'center')
+
+        -- Used in case its the computers turn to serve
+        if (servingPlayer == 2) then
+          gameState = "play"
+        end
+
     elseif gameState == 'play' then
         -- no UI messages to display in play
         --[[if not(player2.y == ball.y) then

@@ -15,6 +15,6 @@ end
 -- Used to draw the image to the screen when called
    -- Uses colons to pass in the self parameter
 function player:render()
-  -- Used to draw the image to screen
+  -- Used to draw the image to screen with the player
   love.graphics.draw(self.image, self.x, self.y)
 end

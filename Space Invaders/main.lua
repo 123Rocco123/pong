@@ -5,3 +5,6 @@ window_width = 1920;
 -- SInce we want to have a more retro aesthetic, we require the "push" library.
    -- This code was forked from the CS:50 Game Dev Harvard Course Pong Repo.
 push = require "push"
+
+-- Used to import the player class
+player = require "player"

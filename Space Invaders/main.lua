@@ -14,3 +14,9 @@ require "player"
 -- Used to initiate the constructor class.
    -- This will make ti so that we can manipulate the "self" values of the player class without having errors.
 player = player()
+
+function love.update(dt)
+  love.keyboard.isDown("right")
+    player.x = player.x - (100 * dt)
+
+end

@@ -10,3 +10,7 @@ push = require "push"
 
 -- Used to import the player class
 require "player"
+
+-- Used to initiate the constructor class.
+   -- This will make ti so that we can manipulate the "self" values of the player class without having errors.
+player = player()

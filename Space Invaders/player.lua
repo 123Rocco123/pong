@@ -1,3 +1,5 @@
+player = Class{}
+
 -- Used to setup the player
 function player:init()
   self.image = love.graphics.newImage("player.png")

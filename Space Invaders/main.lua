@@ -9,4 +9,4 @@ Class = require "class"
 push = require "push"
 
 -- Used to import the player class
-player = require "player"
+require "player"
